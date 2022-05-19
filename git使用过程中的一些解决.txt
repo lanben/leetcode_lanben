@@ -1,0 +1,26 @@
+上传代码到本地仓库
+git add  
+查看状态
+git status
+添加代码注释
+git commit -m ” “
+将代码push到github
+git push -u origin main
+
+
+
+出现报错OpenSSL SSL_read: Connection was reset, errno 10054
+解决
+git config --global http.sslVerify "false"
+
+
+
+修改commit
+（1）git rebase -i HEAD~2          【数字指的是倒数第n次提交记录的注释】
+（2）pick 改成 edit                       【输入 i 编辑模式，只需要将你需要修改的注释前的pick 改为 edit 即可】
+（3）Esq                                       【退出编辑模式】
+（4）:wq                                        【保存退出】
+（5）git commit --amend              【同上有提示，第一行进行你真正需要的修改, 修改完后，保存退出】
+（6）git rebase --continue            【退出后，输入最后一步】
+最后push到远程仓库
+git push --force origin main
